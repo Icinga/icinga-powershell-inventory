@@ -27,29 +27,33 @@ function Invoke-IcingaInventoryRESTCall()
     # Our namespace to include inventory packages is 'include' over the api
     # Everything else will be dropped for the moment
     if ($Request.RequestArguments.ContainsKey('include')) {
-        foreach ($inquiry in $Request.RequestArguments.include) {
-            if ($InventoryAliases.ContainsKey($inquiry)) {
-                if ($InventoryAliases[$inquiry].GetType().BaseType -eq [array]) {
+        [bool]$LoadAll = $FALSE;
+        if ($Request.RequestArguments.include -Contains '*') {
+            $LoadAll = $TRUE;
+        }
+        foreach ($element in $InventoryAliases.Keys) {
+            if ($Request.RequestArguments.include -Contains '*' -Or $Request.RequestArguments.include -Contains $element) {
+                if ($InventoryAliases[$element].GetType().BaseType -eq [array]) {
                     [array]$ArrayContent = @();
 
-                    foreach ($command in $InventoryAliases[$inquiry]) {
+                    foreach ($command in $InventoryAliases[$element]) {
                         Write-IcingaDebugMessage -Message ('Executing array inventory command ' + $command);
                         $ArrayContent += & $command;
                     }
 
                     Add-IcingaHashtableItem `
                         -Hashtable $ContentResponse `
-                        -Key $inquiry `
+                        -Key $element `
                         -Value $ArrayContent | Out-Null;
                     
                 } else {
-                    $command = $InventoryAliases[$inquiry];
+                    $command = $InventoryAliases[$element];
 
                     Write-IcingaDebugMessage -Message ('Executing inventory command ' + $command);
 
                     Add-IcingaHashtableItem `
                         -Hashtable $ContentResponse `
-                        -Key $inquiry `
+                        -Key $element `
                         -Value (& $command) | Out-Null;
                 }
             }
