@@ -56,6 +56,14 @@ function Invoke-IcingaInventoryRESTCall()
         }
     }
 
+    if ($Request.RequestArguments.ContainsKey('exclude')) {
+        foreach ($exclude in $Request.RequestArguments.exclude) {
+            Remove-IcingaHashtableItem `
+                -Hashtable $ContentResponse `
+                -Key $exclude | Out-Null;
+        }
+    }
+
     # Send the response to the client
     Send-IcingaTCPClientMessage -Message (
         New-IcingaTCPClientRESTMessage `
