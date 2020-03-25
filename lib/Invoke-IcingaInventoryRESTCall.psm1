@@ -68,6 +68,13 @@ function Invoke-IcingaInventoryRESTCall()
         }
     }
 
+    if ($ContentResponse.Count -eq 0) {
+        $ContentResponse.Add(
+            'message',
+            'Welcome to the Icinga for Windows inventory API. To fetch information, please use the include argument. You can also exclude content. Example: /v1/inventory?include=cpu, /v1/inventory?include=*&exclude=users&exclude=services'
+        );
+    }
+
     # Send the response to the client
     Send-IcingaTCPClientMessage -Message (
         New-IcingaTCPClientRESTMessage `
