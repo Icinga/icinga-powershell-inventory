@@ -24,6 +24,21 @@ function Invoke-IcingaInventoryRESTCall()
         return;
     }
 
+    # If we use the list argument, return a list of all available inventory commands
+    if ($Request.RequestArguments.ContainsKey('list')) {
+        Send-IcingaTCPClientMessage -Message (
+            New-IcingaTCPClientRESTMessage `
+                -HTTPResponse ($IcingaHTTPEnums.HTTPResponseType.Ok) `
+                -ContentBody @{
+                    'Inventory' = @(
+                        $InventoryAliases.Keys
+                    )
+                }
+        ) -Stream $Connection.Stream;
+
+        return;
+    }
+
     # Our namespace to include inventory packages is 'include' over the api
     # Everything else will be dropped for the moment
     if ($Request.RequestArguments.ContainsKey('include')) {
@@ -71,7 +86,7 @@ function Invoke-IcingaInventoryRESTCall()
     if ($ContentResponse.Count -eq 0) {
         $ContentResponse.Add(
             'message',
-            'Welcome to the Icinga for Windows inventory API. To fetch information, please use the include argument. You can also exclude content. Example: /v1/inventory?include=cpu, /v1/inventory?include=*&exclude=users&exclude=services'
+            'Welcome to the Icinga for Windows inventory API. To fetch information, please use the include argument. A full list will be returned with /v1/inventory?list. You can also exclude content. Example: /v1/inventory?include=cpu, /v1/inventory?include=*&exclude=users&exclude=services'
         );
     }
 
