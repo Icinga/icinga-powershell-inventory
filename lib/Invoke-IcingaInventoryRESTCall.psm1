@@ -1,15 +1,14 @@
 function Invoke-IcingaInventoryRESTCall()
 {
     param (
-        [Hashtable]$Request    = @{},
-        [Hashtable]$Connection = @{},
-        $IcingaGlobals
+        [Hashtable]$Request    = @{ },
+        [Hashtable]$Connection = @{ }
     );
 
-    [Hashtable]$ContentResponse = @{};
+    [Hashtable]$ContentResponse = @{ };
     
     # Short our call
-    $InventoryAliases = $IcingaGlobals.BackgroundDaemon.IcingaPowerShellRestApi.CommandAliases.inventory;
+    $InventoryAliases = $Global:Icinga.Public.Daemons.RESTApi.CommandAliases.inventory;
 
     # Check if there are an inventory aliases configured
     # This should be maintained by the developer and not occur
