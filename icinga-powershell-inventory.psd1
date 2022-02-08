@@ -24,7 +24,7 @@
         };
         Version = 'v1.2.0';
         Name    = 'Inventory';
-        Type    = 'extension';
+        Type    = 'apiendpoint';
     }
     HelpInfoURI       = 'https://github.com/Icinga/icinga-powershell-inventory'
 }
