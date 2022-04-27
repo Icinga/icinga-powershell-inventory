@@ -70,3 +70,8 @@ function Register-IcingaRESTApiCommandAliasesInventory()
         }
     }
 }
+
+function Import-IcingaPowerShellComponentInventory()
+{
+    # Allows other components to load this component
+}
