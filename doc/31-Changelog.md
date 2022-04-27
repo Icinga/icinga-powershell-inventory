@@ -11,6 +11,10 @@ Released closed milestones can be found on [GitHub](https://github.com/Icinga/ic
 
 [Issue and PRs](https://github.com/Icinga/icinga-powershell-inventory/milestone/3?closed=1)
 
+### Bugfixes
+
+* [#4](https://github.com/Icinga/icinga-powershell-inventory/pull/4) Fixes pending updates not working
+
 ### Enhancements
 
 * [#3](https://github.com/Icinga/icinga-powershell-inventory/pull/3) Adds support for Icinga for Windows v1.9.0 module isolation
