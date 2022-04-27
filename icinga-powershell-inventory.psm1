@@ -63,7 +63,7 @@ function Register-IcingaRESTApiCommandAliasesInventory()
             'users'      = 'Get-IcingaUsers';
             'windows'    = 'Get-IcingaWindows';
             'updates'    = @(
-                'Get-IcingaUpdatesPendings',
+                'Get-IcingaWindowsUpdatesPending',
                 'Get-IcingaUpdatesHotfix',
                 'Get-IcingaUpdatesInstalled'
             );
