@@ -1,4 +1,4 @@
-function Invoke-IcingaInventoryRESTCall()
+function Global:Invoke-IcingaInventoryRESTCall()
 {
     param (
         [Hashtable]$Request    = @{ },
