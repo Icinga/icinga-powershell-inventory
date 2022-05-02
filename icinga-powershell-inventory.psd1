@@ -1,5 +1,5 @@
 @{
-    ModuleVersion     = '1.2.0'
+    ModuleVersion     = '1.3.0'
     GUID              = 'b4aec037-4361-415e-8921-94ff0f664e0b'
     ModuleToProcess   = 'icinga-powershell-inventory.psm1'
     Author            = 'Lord Hepipud, Crited'
@@ -28,7 +28,7 @@
             ProjectUri = 'https://github.com/Icinga/icinga-powershell-inventory'
             ReleaseNotes = 'https://github.com/Icinga/icinga-powershell-inventory/releases'
         };
-        Version = 'v1.2.0';
+        Version = 'v1.3.0';
         Name    = 'Inventory';
         Type    = 'apiendpoint';
     }
