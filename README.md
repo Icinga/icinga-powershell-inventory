@@ -1,6 +1,6 @@
 # Icinga PowerShell Inventory
 
-This repository provides an API endpoint for the [Icinga PowerShell REST-Api](https://github.com/Icinga/icinga-powershell-restapi) to collect inventory information provided by the [Icinga PowerShell Plugins](https://github.com/Icinga/icinga-powershell-plugins) or from custom development based on the [Icinga PowerShell Framework](https://github.com/Icinga/icinga-powershell-framework).
+This repository provides an API endpoint for the [Icinga for Windows REST-Api](https://icinga.com/docs/icinga-for-windows/latest/doc/110-Installation/30-API-Check-Forwarder/) to collect inventory information provided by the [Icinga PowerShell Plugins](https://github.com/Icinga/icinga-powershell-plugins) or from custom development based on the [Icinga PowerShell Framework](https://github.com/Icinga/icinga-powershell-framework).
 
 Before you continue, please take a look on the [installation guide](doc/02-Installation.md)
 

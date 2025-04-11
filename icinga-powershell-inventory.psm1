@@ -3,7 +3,7 @@
    Registers an endpoint called 'inventory' in our REST-Api
 .DESCRIPTION
    This module will provide an endpoint for the Icinga for Windows REST-Api
-   https://github.com/Icinga/icinga-powershell-restapi
+   https://icinga.com/docs/icinga-for-windows/latest/doc/110-Installation/30-API-Check-Forwarder/
 
    The endpoint itself is called 'inventory' and will map available Cmdlets for
    data providers
@@ -31,7 +31,7 @@ function Register-IcingaRESTAPIEndpointInventory()
    from our REST-Call securely to our PowerShell Cmdlets
 .DESCRIPTION
    This module will provide an endpoint for the Icinga for Windows REST-Api
-   https://github.com/Icinga/icinga-powershell-restapi
+   https://icinga.com/docs/icinga-for-windows/latest/doc/110-Installation/30-API-Check-Forwarder/
 
    By using the references, we can register endpoints and alises to fetch
    informations

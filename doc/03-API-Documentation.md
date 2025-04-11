@@ -1,6 +1,6 @@
 # API Documentation
 
-This module is providing a REST endpoint for the [Icinga PowerShell REST-Api](https://icinga.com/docs/windows/latest/restapi).
+This module is providing an endpoint for the [Icinga for Windows REST-Api](https://icinga.com/docs/icinga-for-windows/latest/doc/110-Installation/30-API-Check-Forwarder/).
 
 Once the module is [installed](02-Installation.md) you can access it over the API under its namespace
 
